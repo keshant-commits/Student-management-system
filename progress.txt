@@ -1,0 +1,71 @@
+==============================================================
+PROGRESS LOG: Student Management System (APAAR)
+==============================================================
+Purpose : Memory between cycles. Each cycle starts with a fresh
+          context, so everything the next cycle must know goes here.
+Rules   : - APPEND to the log. Never rewrite or delete old entries.
+          - Keep entries short and factual.
+          - Update "CURRENT STATE" at the end of every cycle.
+
+--------------------------------------------------------------
+CURRENT STATE
+--------------------------------------------------------------
+Last updated      : (not started)
+Last task done    : (none)
+Next eligible task: T-001  (check PRD.md; confirm blocking decisions first)
+Branch            : (none)
+Tests status      : (none run yet)
+
+--------------------------------------------------------------
+DECISIONS STATUS SNAPSHOT (copy of PRD.md Section 3, keep in sync)
+--------------------------------------------------------------
+D-01 Database (PostgreSQL)            : Proposed
+D-02 APAAR format (12 digits)         : Proposed
+D-03 Jobs (Celery + Redis)            : Proposed
+D-04 Identity model (persons/enrolments): Proposed
+D-05 Verification disclosure tiers    : Proposed
+D-06 Password hashing (Argon2id)      : Proposed
+D-07 Consent defaults                 : Proposed
+D-08 Student onboarding               : Proposed
+D-09 Intake/category rule sources     : Proposed
+D-10 Token transport                  : Proposed
+D-11 Regulator access without consent : Proposed
+D-12 Overlap grace period (30 days)   : Proposed
+D-13 Retention periods                : Proposed
+
+--------------------------------------------------------------
+TASK STATUS (mirror of PRD.md checkboxes; PRD.md is authoritative)
+--------------------------------------------------------------
+Done        : (none)
+In progress : (none)
+Blocked     : (none)
+
+--------------------------------------------------------------
+QUESTIONS FOR A HUMAN (add here instead of guessing)
+--------------------------------------------------------------
+(none)
+
+--------------------------------------------------------------
+FOLLOW-UPS (out-of-scope ideas noticed during work; do NOT build now)
+--------------------------------------------------------------
+(none)
+
+--------------------------------------------------------------
+LEARNINGS (commands that work, gotchas, conventions discovered)
+--------------------------------------------------------------
+(none yet)
+
+--------------------------------------------------------------
+CYCLE LOG (append only, newest at the bottom)
+--------------------------------------------------------------
+Template:
+
+[YYYY-MM-DD] Cycle N | Task: T-xxx | Result: DONE | BLOCKED | PARTIAL
+  Did      : what was implemented, in 1 to 3 lines
+  Files    : main files added or changed
+  Tests    : what was added; result of full test, lint and type run
+  Evidence : acceptance criteria met (AC1, AC2, ...) and how verified
+  Notes    : surprises, assumptions, things the next cycle must know
+  Next     : the next eligible task ID
+
+--- log starts below this line ---
