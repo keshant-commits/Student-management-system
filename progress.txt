@@ -11,7 +11,7 @@ Rules   : - APPEND to the log. Never rewrite or delete old entries.
 CURRENT STATE
 --------------------------------------------------------------
 Last updated      : 2026-10-29
-Last task done    : (none)
+Last task done    : T-001 (Done, PR #1 merged)
 Next eligible task: T-002  (depends on T-001 Done)
 Branch            : task/T-001-pr
 Tests status      : `cd backend && .venv/Scripts/python.exe -m pytest` -> 6 passed, 1 StarletteDeprecationWarning; lint/type Not run (tools absent); CI Not Available (T-004)
@@ -68,7 +68,20 @@ Template:
   Notes    : surprises, assumptions, things the next cycle must know
   Next     : the next eligible task ID
 
---- log starts below this line ---
+---
+Date: 2026-10-29
+Task: T-001 Backend skeleton and health endpoint
+Status: Done
+Changed files: backend/app/core/config.py, backend/app/main.py, backend/requirements.txt, backend/pytest.ini, backend/tests/test_health.py, progress.txt, PRD.md
+Acceptance criteria: AC1 Pass; AC2 Pass; AC3 Pass
+Tests and checks: `cd backend && .venv/Scripts/python.exe -m pytest` -> 6 passed, 1 StarletteDeprecationWarning; lint/type Not run; CI Not Available (T-004)
+Security/privacy checks: Not applicable
+Definition of Done: met
+Skipped tasks: None
+Approval: ci=na (no CI workflow yet; T-004), coderabbit=pass, approved=yes, pr=https://github.com/keshant-commits/Student-management-system/pull/1, note="No CI workflow yet; T-004 owns CI", HEAD=b8cb14cd31e171feabfcdbc2ef6431bbb56708a1, tree clean for task files yes, independently verified by agent: CI not verified (na), CodeRabbit review evidence present
+Pending: None
+Risk or limitation: minimal settings; no required-vars list beyond SECRET_KEY
+Next action: Start T-002 when ready
 ---
 Date: 2026-10-29
 Task: T-001 Backend skeleton and health endpoint
