@@ -35,5 +35,3 @@ jobs:
       - name: Dependency vulnerability scan
         working-directory: backend
         run: pip-audit -r requirements.txt
-" filePath">
-D:\GITHUB REPO\Student-management-system\.kilo\worktrees\T-004\.github\workflows\backend-ci.yml
