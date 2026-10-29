@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from app.core.config import Settings, load_settings
+
+from app.core.config import load_settings
 
 settings = load_settings()
 
