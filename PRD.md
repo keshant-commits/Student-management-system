@@ -186,7 +186,7 @@ Status legend: ☐ Todo, ◐ In progress, ☑ Done. Size: **S** (under half a da
   - AC3: OpenAPI docs are served at `/docs` in development only.
 - Tests: U settings validation; I health endpoint.
 
-**T-002 Docker Compose for dev services** [S] ◐ Depends: T-001
+**T-002 Docker Compose for dev services** [S] ☑ Depends: T-001
 - Goal: one command starts backend, PostgreSQL and Redis.
 - Acceptance:
   - AC1: `docker compose up` brings up all services healthy.
