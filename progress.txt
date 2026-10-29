@@ -36,8 +36,8 @@ D-13 Retention periods                : Proposed
 --------------------------------------------------------------
 TASK STATUS (mirror of PRD.md checkboxes; PRD.md is authoritative)
 --------------------------------------------------------------
-Done        : (none)
-In progress : (none)
+Done        : T-001
+In progress : T-002
 Blocked     : (none)
 
 --------------------------------------------------------------
@@ -96,3 +96,17 @@ Approval: None
 Pending: CI (T-004), CodeRabbit review, user approval
 Risk or limitation: minimal settings; no required-vars list beyond SECRET_KEY
 Next action: install pytest or run CI; /ralph-cycle approve T-001 ...
+---
+Date: 2026-10-29
+Task: T-002 Docker Compose for Development Services
+Status: Implemented, pending review
+Changed files: backend/Dockerfile, docker-compose.yml, .env.example, scripts/init-db.sql
+Acceptance criteria: AC1 Pass (all three services healthy); AC2 Pass (.env.example placeholders only); AC3 Pass (.env git-ignored, untracked local .env used)
+Tests and checks: docker compose config Pass; docker compose up -d --build Pass; docker compose ps Pass (all healthy); health endpoint 200 {"status":"ok"}; pg_trgm present; redis PONG; pytest 6 passed
+Security/privacy checks: Not applicable
+Definition of Done: met (ACs demonstrated)
+Skipped tasks: None
+Approval: None
+Pending: CI, CodeRabbit, user approval
+Risk or limitation: backend healthcheck uses Python urllib; .env is untracked local-only
+Next action: Review and approve T-002
