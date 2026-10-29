@@ -11,8 +11,8 @@ Rules   : - APPEND to the log. Never rewrite or delete old entries.
 CURRENT STATE
 --------------------------------------------------------------
 Last updated      : 2026-10-29
-Last task done    : T-001 (Done, PR #1 merged)
-Next eligible task: T-002  (depends on T-001 Done)
+Last task done    : T-002 (Done, PR #3 merged)
+Next eligible task: T-003  (depends on T-002 Done; blocked by D-01)
 Branch            : task/T-001-pr
 Tests status      : `cd backend && .venv/Scripts/python.exe -m pytest` -> 6 passed, 1 StarletteDeprecationWarning; lint/type Not run (tools absent); CI Not Available (T-004)
 
@@ -36,8 +36,8 @@ D-13 Retention periods                : Proposed
 --------------------------------------------------------------
 TASK STATUS (mirror of PRD.md checkboxes; PRD.md is authoritative)
 --------------------------------------------------------------
-Done        : T-001
-In progress : T-002
+Done        : T-001, T-002
+In progress : (none)
 Blocked     : (none)
 
 --------------------------------------------------------------
@@ -110,3 +110,18 @@ Approval: None
 Pending: CI, CodeRabbit, user approval
 Risk or limitation: backend healthcheck uses Python urllib; .env is untracked local-only
 Next action: Review and approve T-002
+
+---
+Date: 2026-10-29
+Task: T-002 Docker Compose for Development Services
+Status: Done
+Changed files: .env.example, PRD.md, backend/Dockerfile, docker-compose.yml, progress.txt, scripts/init-db.sql, README.md, backend/.dockerignore
+Acceptance criteria: AC1 Pass (all services healthy); AC2 Pass (.env.example placeholders only); AC3 Pass (.env ignored)
+Tests and checks: docker compose config Pass; docker compose up -d --build Pass; docker compose ps Pass; health endpoint 200 {"status":"ok"}; pg_trgm present; Redis PONG; pytest 6 passed
+Security/privacy checks: .env ignored and excluded; no secrets committed
+Definition of Done: met
+Skipped tasks: None
+Approval: ci=na (no CI workflow yet; T-004 owns CI), coderabbit=na (review completed with 3 findings; fixes pushed e6b433d; latest manual review rate-limited), approved=yes, pr=3, HEAD=25c3b1d, tree clean for task files yes, independently verified by agent: CI not independently verified, CodeRabbit review evidence present
+Pending: None
+Risk or limitation: README setup docs added; backend .dockerignore added
+Next action: Start T-003 when D-01 confirmed
