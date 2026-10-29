@@ -125,3 +125,18 @@ Approval: ci=na (no CI workflow yet; T-004 owns CI), coderabbit=na (review compl
 Pending: None
 Risk or limitation: README setup docs added; backend .dockerignore added
 Next action: Start T-003 when D-01 confirmed
+
+---
+Date: 2026-10-30
+Task: T-004 Backend CI workflow
+Status: Implemented, pending review
+Changed files: .github/workflows/backend-ci.yml, backend/app/main.py, backend/tests/test_health.py
+Acceptance criteria: AC1 Pass (pull_request trigger no path filters); AC2 Pass (coverage 92.86% >= 80%); AC3 Pass (pip-audit step present)
+Tests and checks: ruff check . -> 0 errors after import fixes; mypy app/core app/main.py -> Success no issues; pytest 6 passed; coverage 92.86%; pip-audit -> No known vulnerabilities; YAML parse OK
+Security/privacy checks: Not applicable
+Definition of Done: met for T-004 scope
+Skipped tasks: None
+Approval: None
+Pending: CI execution on GitHub, CodeRabbit, user approval
+Risk or limitation: mypy scoped to app/core and app/main.py due placeholder modules; pip-audit only requirements.txt
+Next action: Review diff and open PR
