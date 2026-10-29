@@ -201,7 +201,7 @@ Status legend: ☐ Todo, ◐ In progress, ☑ Done. Size: **S** (under half a da
   - AC3: Application DB role has no superuser rights.
 - Tests: I migration up and down.
 
-**T-004 Backend CI workflow** [S] ◐ Depends: T-001
+**T-004 Backend CI workflow** [S] ☑ Depends: T-001
 - Acceptance:
   - AC1: `backend-ci.yml` runs lint, type check and `pytest` on every PR.
   - AC2: The build fails when coverage on `core` is below 80% (once `core` has code).

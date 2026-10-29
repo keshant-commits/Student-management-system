@@ -140,3 +140,18 @@ Approval: None
 Pending: CI execution on GitHub, CodeRabbit, user approval
 Risk or limitation: mypy scoped to app/core and app/main.py due placeholder modules; pip-audit only requirements.txt
 Next action: Review diff and open PR
+
+---
+Date: 2026-10-30
+Task: T-004 Backend CI workflow
+Status: Done
+Changed files: .github/workflows/backend-ci.yml, backend/app/main.py, backend/tests/test_health.py, PRD.md, progress.txt
+Acceptance criteria: AC1 Pass; AC2 Pass; AC3 Pass
+Tests and checks: GitHub Actions run 40937655660 success; Ruff/Mypy/pytest/pip-audit passed; app.core coverage 92.86%
+Security/privacy checks: Not applicable
+Definition of Done: met
+Skipped tasks: None
+Approval: ci=pass, coderabbit=pass, approved=yes, pr=5, note=CodeRabbit completed review with merge risk low and all pre-merge checks passed, HEAD=d3a25b917619f585db6112a31a7bfe0e0c152bc9, tree clean for task files yes, independently verified by agent yes
+Pending: None
+Risk or limitation: mypy scoped to app/core and app/main.py
+Next action: Start next eligible task
