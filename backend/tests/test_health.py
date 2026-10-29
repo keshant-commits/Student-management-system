@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 
 def _reload_main(monkeypatch, env):
-    for k in ("APP_ENV", "SECRET_KEY"):
+    for k in ("APP_ENV", "SECRET_KEY", "DATABASE_URL"):
         monkeypatch.delenv(k, raising=False)
     for k, v in env.items():
         monkeypatch.setenv(k, v)
@@ -29,9 +29,16 @@ def test_missing_secret_raises(monkeypatch):
 
 
 def test_valid_config_loads(monkeypatch):
-    main_mod = _reload_main(monkeypatch, {"APP_ENV": "development", "SECRET_KEY": "test-secret"})
+    db_url = "sqlite:///./test.db"
+    main_mod = _reload_main(monkeypatch, {"APP_ENV": "development", "SECRET_KEY": "test-secret", "DATABASE_URL": db_url})
     assert main_mod.settings.secret_key == "test-secret"
     assert main_mod.settings.app_env == "development"
+    assert main_mod.settings.database_url == db_url
+
+
+def test_empty_secret_raises(monkeypatch):
+    with pytest.raises(RuntimeError, match="SECRET_KEY"):
+        _reload_main(monkeypatch, {"APP_ENV": "development", "SECRET_KEY": ""})
 
 
 def test_docs_available_in_development(monkeypatch):

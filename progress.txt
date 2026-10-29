@@ -75,7 +75,7 @@ Task: T-001 Backend skeleton and health endpoint
 Status: Implemented, pending review
 Changed files: backend/app/core/config.py, backend/app/main.py
 Acceptance criteria: AC1 Pass (200 {"status":"ok"}); AC2 Pass (startup raises RuntimeError listing missing SECRET_KEY); AC3 Pass (docs_url only in development)
-Tests and checks: `backend/.venv/Scripts/python.exe -m pytest` -> 5 passed, 1 warning (StarletteDeprecationWarning httpx) in 1.32s; lint/type Not run (tools absent); CI Not Available/Not Run (backend-ci.yml empty, T-004)
+Tests and checks: `backend/.venv/Scripts/python.exe -m pytest` -> 6 passed, 1 warning (StarletteDeprecationWarning httpx) in 1.37s; lint/type Not run (tools absent); CI Not Available/Not Run (backend-ci.yml empty, T-004)
 Security/privacy checks: Not applicable
 Definition of Done: met (ACs); not met (CI, tests automated) due missing pytest
 Skipped tasks: None
