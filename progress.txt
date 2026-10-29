@@ -36,8 +36,8 @@ D-13 Retention periods                : Proposed
 --------------------------------------------------------------
 TASK STATUS (mirror of PRD.md checkboxes; PRD.md is authoritative)
 --------------------------------------------------------------
-Done        : (none)
-In progress : (none)
+Done        : T-001
+In progress : T-002
 Blocked     : (none)
 
 --------------------------------------------------------------
