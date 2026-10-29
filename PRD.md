@@ -178,7 +178,7 @@ Status legend: ☐ Todo, ◐ In progress, ☑ Done. Size: **S** (under half a da
 
 ### Phase 0: Foundation
 
-**T-001 Backend skeleton and health endpoint** [S] ☐
+**T-001 Backend skeleton and health endpoint** [S] ◐
 - Goal: runnable FastAPI app with typed settings.
 - Acceptance:
   - AC1: `GET /api/v1/health` returns `200 {"status":"ok"}`.

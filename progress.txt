@@ -10,11 +10,11 @@ Rules   : - APPEND to the log. Never rewrite or delete old entries.
 --------------------------------------------------------------
 CURRENT STATE
 --------------------------------------------------------------
-Last updated      : (not started)
+Last updated      : 2026-10-29
 Last task done    : (none)
-Next eligible task: T-001  (check PRD.md; confirm blocking decisions first)
-Branch            : (none)
-Tests status      : (none run yet)
+Next eligible task: T-002  (depends on T-001 Done)
+Branch            : task/T-001-pr
+Tests status      : `cd backend && .venv/Scripts/python.exe -m pytest` -> 6 passed, 1 StarletteDeprecationWarning; lint/type Not run (tools absent); CI Not Available (T-004)
 
 --------------------------------------------------------------
 DECISIONS STATUS SNAPSHOT (copy of PRD.md Section 3, keep in sync)
@@ -69,3 +69,17 @@ Template:
   Next     : the next eligible task ID
 
 --- log starts below this line ---
+---
+Date: 2026-10-29
+Task: T-001 Backend skeleton and health endpoint
+Status: Implemented, pending review
+Changed files: backend/app/core/config.py, backend/app/main.py
+Acceptance criteria: AC1 Pass (200 {"status":"ok"}); AC2 Pass (startup raises RuntimeError listing missing SECRET_KEY); AC3 Pass (docs_url only in development)
+Tests and checks: `backend/.venv/Scripts/python.exe -m pytest` -> 6 passed, 1 warning (StarletteDeprecationWarning httpx) in 1.37s; lint/type Not run (tools absent); CI Not Available/Not Run (backend-ci.yml empty, T-004)
+Security/privacy checks: Not applicable
+Definition of Done: ACs met; automated tests present and passing (6); CI pending T-004; lint/type tools absent
+Skipped tasks: None
+Approval: None
+Pending: CI (T-004), CodeRabbit review, user approval
+Risk or limitation: minimal settings; no required-vars list beyond SECRET_KEY
+Next action: install pytest or run CI; /ralph-cycle approve T-001 ...
