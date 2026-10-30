@@ -1,4 +1,4 @@
-==============================================================
+﻿==============================================================
 PROGRESS LOG: Student Management System (APAAR)
 ==============================================================
 Purpose : Memory between cycles. Each cycle starts with a fresh
@@ -12,14 +12,14 @@ CURRENT STATE
 --------------------------------------------------------------
 Last updated      : 2026-10-29
 Last task done    : T-002 (Done, PR #3 merged)
-Next eligible task: T-003  (depends on T-002 Done; blocked by D-01)
+Next eligible task: T-003  (depends on T-002 Done; D-01 Confirmed)
 Branch            : task/T-001-pr
 Tests status      : `cd backend && .venv/Scripts/python.exe -m pytest` -> 6 passed, 1 StarletteDeprecationWarning; lint/type Not run (tools absent); CI Not Available (T-004)
 
 --------------------------------------------------------------
 DECISIONS STATUS SNAPSHOT (copy of PRD.md Section 3, keep in sync)
 --------------------------------------------------------------
-D-01 Database (PostgreSQL)            : Proposed
+D-01 Database (PostgreSQL)            : Confirmed
 D-02 APAAR format (12 digits)         : Proposed
 D-03 Jobs (Celery + Redis)            : Proposed
 D-04 Identity model (persons/enrolments): Proposed
@@ -124,7 +124,7 @@ Skipped tasks: None
 Approval: ci=na (no CI workflow yet; T-004 owns CI), coderabbit=na (review completed with 3 findings; fixes pushed e6b433d; latest manual review rate-limited), approved=yes, pr=3, HEAD=25c3b1d, tree clean for task files yes, independently verified by agent: CI not independently verified, CodeRabbit review evidence present
 Pending: None
 Risk or limitation: README setup docs added; backend .dockerignore added
-Next action: Start T-003 when D-01 confirmed
+Next action: Start T-003 (D-01 confirmed)
 
 ---
 Date: 2026-10-30
@@ -155,3 +155,6 @@ Approval: ci=pass, coderabbit=pass, approved=yes, pr=5, note=CodeRabbit complete
 Pending: None
 Risk or limitation: mypy scoped to app/core and app/main.py
 Next action: Start next eligible task
+
+
+

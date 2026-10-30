@@ -1,4 +1,4 @@
-# Product Requirements and Task Plan (PRD)
+﻿# Product Requirements and Task Plan (PRD)
 ## Student Management System with APAAR ID
 
 | | |
@@ -141,7 +141,7 @@ Status values: **Proposed** (default to use unless changed), **Confirmed**, **Re
 
 | ID | Decision | Proposed default | Status | Blocks |
 |---|---|---|---|---|
-| D-01 | Database | PostgreSQL 15+ with `pg_trgm` | Proposed | T-003, T-022 |
+| D-01 | Database | PostgreSQL 15+ with `pg_trgm` | Confirmed | T-003, T-022 |
 | D-02 | APAAR ID format and checksum | 12 digits, no checksum (configurable) | Proposed | T-033 |
 | D-03 | Background jobs | Celery with Redis | Proposed | T-042 |
 | D-04 | Identity model (Section 2.1) | As written above | Proposed | T-022 onward |
@@ -299,7 +299,7 @@ Status legend: ☐ Todo, ◐ In progress, ☑ Done. Size: **S** (under half a da
   - AC4: Two encryptions of the same value produce different ciphertext.
 - Tests: U roundtrip, tamper, wrong key, nonce uniqueness; S key is never logged.
 
-**T-022 Persons and enrolments schema** [L] ☐ Depends: T-020, T-021 · Blocked by D-01, D-04
+**T-022 Persons and enrolments schema** [L] ☐ Depends: T-020, T-021 · Blocked by D-04
 - Acceptance:
   - AC1: Migration creates `persons`, `enrolments`, `enrolment_status_history` as in Section 2.1.
   - AC2: Unique index on `persons.apaar_id_hash` (where not null) and the enrolment unique partial index exist.
@@ -627,3 +627,9 @@ R4:        T-062..T-064 -> T-080, T-081 -> T-082 -> T-083
 | Version | Date | Change |
 |---|---|---|
 | 0.1 | 28 Oct 2026 | Initial PRD created from design review. Introduced the person and enrolment split (ID-1) and the tiered disclosure model (VER-1). |
+
+
+**D-01 confirmed (user approval):** PostgreSQL 15+ with pg_trgm extension — 2026-10-30, approver: user (via instructions).
+
+
+
